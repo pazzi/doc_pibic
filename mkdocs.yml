@@ -5,7 +5,6 @@ theme:
    locale: pt_BR
 
 markdown_extensions:
-   - pymdownx.tasklist
    - pymdownx.emoji
    - pymdownx.mark
    - pymdownx.tilde

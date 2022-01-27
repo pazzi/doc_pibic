@@ -1,1 +1,13 @@
 site_name: Documentação do Pibic - Embrapa Meio Ambiente
+
+theme:
+   name: readthedocs
+   locale: pt_BR
+
+markdown_extensions:
+   - pymdownx.tasklist
+   - pymdownx.emoji
+   - pymdownx.mark
+   - pymdownx.tilde
+   - pymdownx.highlight
+

@@ -2,6 +2,8 @@
 
 Registros de dados do Seguro Rural obtidos no Banco Central
 
+Registro de dados de finaciamentos rurais
+
 Registro de dados sobre fases da Lua
 
 Registro de dados obtidos em instituições governamentais do clima

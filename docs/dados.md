@@ -184,38 +184,40 @@ done
 O script tem por finalidade gravar no arquivo consolidado.csv os dados das estações acrescidos do nome da estação e da cidade onde situa a estação que estão no nome do arquivo processado.
 
 O arquivo consolidado.csv gerado tem campos separados pelo caracter ";" e tem o seguinte layout:
-    1. Nome da estação;
-    2. Município;
-    3. Data no formato ano-mês-dia (aaaa-mm-dd);
-    4. Hora no formato hh:mm;
-    5. Precipitação total (mm);
-    6. Pressão atmosférica (mB);
-    7. Pressão atmosférica máxima na hora anterior (mB);
-    8. Pressão atmosférica mínima na hora anterior (mB);
-    9. Radiação Global (Kj/m²);
-    10. Temperatura do ar - Bulbo Seco (°C);
-    11. Temperatura do ponto de orvalho(°C);
-    12. Temperatura máxima na hora anterior (°C);
-    13. Temperatura mínima na hora anterior (°C);
-    14. Temperatura orvalho máxima na hora anterior (°C);
-    15. Temperatura orvalho mínima na hora anterior (°C);
-    16. Umidade relativa máxima na hora anterior (%);
-    17. Umidade relativa mínima na hora anterior (%);
-    18. Umidade relativa do ar (%);
-    19. Vento direção horária (gr) (° (gr));
-    20. Vento rajada máxima (m/s);
-    21. Vento velocidade horária (m/s);
+
+1. Nome da estação;
+2. Município;
+3. Data no formato ano-mês-dia (aaaa-mm-dd);
+4. Hora no formato hh:mm;
+5. Precipitação total (mm);
+6. Pressão atmosférica (mB);
+7. Pressão atmosférica máxima na hora anterior (mB);
+8. Pressão atmosférica mínima na hora anterior (mB);
+9. Radiação Global (Kj/m²);
+10. Temperatura do ar - Bulbo Seco (°C);
+11. Temperatura do ponto de orvalho(°C);
+12. Temperatura máxima na hora anterior (°C);
+13. Temperatura mínima na hora anterior (°C);
+14. Temperatura orvalho máxima na hora anterior (°C);
+15. Temperatura orvalho mínima na hora anterior (°C);
+16. Umidade relativa máxima na hora anterior (%);
+17. Umidade relativa mínima na hora anterior (%);
+18. Umidade relativa do ar (%);
+19. Vento direção horária (gr) (° (gr));
+20. Vento rajada máxima (m/s);
+21. Vento velocidade horária (m/s);
 
 Exemplo de uma linha do arquivo consolidado:
-
-*A803;SANTAMARIA;2002-01-02;12:00;0;995,6;995,6;995,3;1990;24,9;18,5;25;23,7;19,3;18,5;73;68;68;262;5,5;2,1*
+```
+A803;SANTAMARIA;2002-01-02;12:00;0;995,6;995,6;995,3;1990;24,9;18,5;25;23,7;19,3;18,5;73;68;68;262;5,5;2,1
+```
 
 O arquivo consolidado contém 4791686 linhas com informações. Dessas 238303 apresentaram o campo relativo a "Precipitação Total" com valor -9999 que são caracterizados como leituras com falhas. Assim o arquivo consolidado apresenta 95,02% de dados íntegros.
 
 Como obteve-se a quantidade de linhas com dados com falhas do arquivo consolidado:
 
 ```
-awk -F";" '$6 ~ "-9999" ' tudo.csv|wc -l
+awk -F";" '$6 ~ "-9999" ' ./csv/consolidado.csv |wc -l
 ```
 
 As localizações das estações do Inmet no estado do Rio Grande do SUL podem ser vistas no mapa do link: [https://parabolicamara.com.br/pibic/mapInmetRS.html](https://parabolicamara.com.br/pibic/mapInmetRS.html).
